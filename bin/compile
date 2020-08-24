@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# bin/compile <build-dir> <cache-dir>
+
+# fail fast
+set -ueo pipefail
+
+# debug
+# set -x
+
+echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf && sysctl -p
+
+puts_step "GoCo React-Native Buildpack installation done"
